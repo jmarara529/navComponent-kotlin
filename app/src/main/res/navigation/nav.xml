@@ -36,6 +36,18 @@
         <argument
             android:name="number"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_segundo_to_tercero"
+            app:destination="@id/tercero" />
 
+    </fragment>
+    <fragment
+        android:id="@+id/tercero"
+        android:name="es.jmarara529.navcomponent_kotlin.tercero"
+        android:label="fragment_tercero"
+        tools:layout="@layout/fragment_tercero" >
+        <action
+            android:id="@+id/action_tercero_to_home2"
+            app:destination="@id/home2" />
     </fragment>
 </navigation>
