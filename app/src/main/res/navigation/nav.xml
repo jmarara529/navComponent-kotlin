@@ -3,24 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav"
-    app:startDestination="@id/home2">
-
+    app:startDestination="@id/home_fragment">
     <fragment
-        android:id="@+id/home2"
-        android:name="es.jmarara529.navcomponent_kotlin.home"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-
+        android:id="@+id/home_fragment"
+        android:name="home_fragment"
+        android:label="home_fragment"
+        tools:layout="@layout/fragment_home_fragment">
         <action
-            android:id="@+id/action_home2_to_segundo"
-            app:destination="@id/segundo"/>
+            android:id="@+id/action_home_fragment_to_segundo"
+            app:destination="@id/segundo" />
 
         <argument
-            android:name="text"
+            android:name="texto"
             app:argType="string"/>
         <argument
-            android:name="number"
-            app:argType="integer" />
+            android:name="numero"
+            app:argType="integer"/>
 
     </fragment>
     <fragment
@@ -28,17 +26,16 @@
         android:name="es.jmarara529.navcomponent_kotlin.segundo"
         android:label="fragment_segundo"
         tools:layout="@layout/fragment_segundo" >
-
-
-        <argument
-            android:name="text"
-            app:argType="string"/>
-        <argument
-            android:name="number"
-            app:argType="integer" />
         <action
             android:id="@+id/action_segundo_to_tercero"
             app:destination="@id/tercero" />
+
+        <argument
+            android:name="texto"
+            app:argType="string"/>
+        <argument
+            android:name="numero"
+            app:argType="integer"/>
 
     </fragment>
     <fragment
@@ -47,7 +44,7 @@
         android:label="fragment_tercero"
         tools:layout="@layout/fragment_tercero" >
         <action
-            android:id="@+id/action_tercero_to_home2"
-            app:destination="@id/home2" />
+            android:id="@+id/action_tercero_to_home_fragment"
+            app:destination="@id/home_fragment" />
     </fragment>
 </navigation>
