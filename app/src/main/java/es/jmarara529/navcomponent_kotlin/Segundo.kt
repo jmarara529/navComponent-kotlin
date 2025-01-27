@@ -1,39 +1,38 @@
 package es.jmarara529.navcomponent_kotlin
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.NavController
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import es.jmarara529.navcomponent_kotlin.databinding.FragmentSegundoBinding
-import home_fragment
 
-class segundo : Fragment(), View.OnClickListener {
+class Segundo : Fragment(), View.OnClickListener {
 
     private  var _binding: FragmentSegundoBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val navController: NavController = findNavController()
-
-        if (getArguments() != null) {
-
-
-
-        }
-    }
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
 
         _binding = FragmentSegundoBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
         super.onViewCreated(view, savedInstanceState)
+
        binding.pantallafinalbutton.setOnClickListener(this)
+
+
+        val texto = arguments?.getString("texto")
+        val numero = arguments?.getInt("numero")
+
+        binding.textView.text = "El texto es: $texto"
+        binding.numView.text = "el numero es: $numero"
+
+
 
 
     }

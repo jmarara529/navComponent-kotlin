@@ -1,3 +1,5 @@
+package es.jmarara529.navcomponent_kotlin
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -6,21 +8,16 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import es.jmarara529.navcomponent_kotlin.R
 import es.jmarara529.navcomponent_kotlin.databinding.FragmentHomeFragmentBinding
-import home_fragmentDirections.home_fragmentDirections
 
-class home_fragment : Fragment(), View.OnClickListener {
+
+class HomeFragment : Fragment(), View.OnClickListener {
 
     private var _binding: FragmentHomeFragmentBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -50,7 +47,7 @@ class home_fragment : Fragment(), View.OnClickListener {
                     val texto = view?.findViewById<EditText>(R.id.editTextText)?.text.toString()
                     val numero = view?.findViewById<EditText>(R.id.editTextNumber)?.text.toString().toInt()
 
-                    val action = home_fragmentDirections.actionHomeFragmentToSegundo(texto, numero)
+                    val action = HomeFragmentDirections.actionHomeFragmentToSegundo(texto, numero)
 
                     findNavController().navigate(action)
 
